@@ -3,8 +3,11 @@
 
 void flush_input(void)
 {
-    char c;
-    while ( (c = getchar() != '\n') && c != EOF);
+    char c = getchar();
+    while (c != '\n' && c != EOF)
+    {
+        c = getchar();
+    }
 }
 
 char* secure_input(char *const restrict buffer, int const size)
