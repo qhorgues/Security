@@ -2,11 +2,13 @@ cmake_minimum_required(VERSION 3.20)
 
 project(security LANGUAGES C VERSION 1.0.0)
 
-include(CTest)
-enable_testing()
+# include(CTest)
+# enable_testing()
 
 include(${CMAKE_SOURCE_DIR}/cmake/option.cmake)
 include(${CMAKE_SOURCE_DIR}/cmake/CompilerWarnings.cmake)
+
+set_option(BUILD_TEST OFF BOOL "Build test code for library")
 
 set_choice (CMAKE_BUILD_TYPE "Debug;Release;MinSizeRel;RelWithDebInfo" "Debug" "Choose type of build")
 
@@ -32,7 +34,7 @@ set (HEADERS
     ${CMAKE_SOURCE_DIR}/include/secure_arithmetic.h
 )
 
-if (BUILD_TESTING)
+if (BUILD_TEST)
     add_subdirectory(${CMAKE_SOURCE_DIR}/test)
 endif()
 
