@@ -3,7 +3,7 @@
 
 void flush_input(void)
 {
-    char c = getchar();
+    int c = getchar();
     while (c != '\n' && c != EOF)
     {
         c = getchar();
