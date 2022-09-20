@@ -1,2 +1,2 @@
 # Security
-Security input and arithmetic operation function in C
+Security is a library implementing user input security and secure arithmetic operation functions
